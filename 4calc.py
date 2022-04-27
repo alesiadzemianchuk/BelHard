@@ -22,6 +22,9 @@ def culc1(a, b, c):
     if type(result) == float:
         print("Это дробное число")
         exit()
+    if (result < 0):
+        result *= -1
+        print("минус")
     if (result > 100 and result % 100 > 19 and result % 10 >= 0):
         print(f'{d1[result - result % 100]} {d1[result % 100 - result % 10]} {d1[result % 10]}')
     elif (result > 100 and result % 100 < 20):
@@ -32,11 +35,8 @@ def culc1(a, b, c):
         print(f'{d1[result]}')
 
 
+
 a = int(input('Введите 1-ое число '))
 b = int(input('Введите 2-ое число '))
 c = input('Введите знак операции ')
 culc1(a, b, c)
-
-
-
-
