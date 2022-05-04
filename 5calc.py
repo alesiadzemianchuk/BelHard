@@ -9,10 +9,22 @@ def culc1(a, b, c):
         result = a * b
         print(result)
     else:
-        result = a / b
-        print(result)
+        result = 0
+        try:
+            result = a / b
+        except ZeroDivisionError:
+            print('нельзя делить на ноль')
+        print(f'{result}')
 
-    d1 = {0: '',
+    # try:
+    #      if b == 0:
+    #          raise ZeroDivisionError('er')
+    # except ZeroDivisionError:
+    #      print('null')
+
+
+
+    d1 = {0: 'ноль',
           1: 'один', 2: 'два', 3: 'три', 4: 'четыре', 5: 'пять', 6: 'шесть', 7: 'семь', 8: 'восемь', 9: 'девять',
           10: 'десять', 11: 'одиннадцать', 12: 'двенадцать', 13: 'тринадцать', 14: 'четырнадцать', 15: 'пятнадцать',
           16: 'шестнадцать', 17: 'семнадцать', 18: 'восемнадцать', 19: 'девятнадцать', 20: 'двадцать', 30: 'тридцать',
@@ -21,7 +33,7 @@ def culc1(a, b, c):
           900: 'девятьсот', 1000: 'одна тысяча'}
     if type(result) == float:
         print("Это дробное число")
-        exit()
+
     if (result < 0):
         result *= -1
         print("минус")
@@ -38,11 +50,13 @@ def culc1(a, b, c):
 c = input('Введите знак операции ')
 a = int(input('Введите 1-ое число '))
 b = int(input('Введите 2-ое число '))
+
 count = 0
 while(c != 'stop'):
     culc1(a, b, c)
     c = input('Введите знак операции ')
-    a = int(input('Введите 1-е число '))
-    b = int(input('Введите 2-ое число '))
+    if c != 'stop':
+        a = int(input('Введите 1-е число '))
+        b = int(input('Введите 2-ое число '))
     count += 1
 print(f'Выполнено {count} операций')
