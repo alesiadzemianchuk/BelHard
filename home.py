@@ -5,6 +5,11 @@ for i in a:
     if i < 5:
         print(i)
 
+
+for i in range(len(a)):
+    if a[i] < 5:
+        print(a[i])
+
 #вывести все четные числа пока не встретим 237
 a1 = [1, 1, 2, 3, 5, 8, 13, 237, 21, 34, 55, 89]
 for i in a1:
