@@ -21,6 +21,8 @@ c2 = Convert(5)
 print(c2.conv2())
 c3 = Convert(3)
 print(c3.conv3())
+c4 = Convert(78)
+print(c4.get())
 
 
 class Nicola:
